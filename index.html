@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Furkan Aslan | Girişimci</title>
+<meta name="description" content="Hayatı kolaylaştıran dijital ürünler geliştiriyorum. Girişimcilik yolculuğumu, öğrendiklerimi ve hatalarımı paylaşıyorum.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+/* VOICE  everyday, warm: a founder's open notebook
+   IDEA   a link-in-bio card that grows into a small portfolio; the amber of the profile photo is the sun he works under
+   PICTURE his photo inside a rising sun of concentric amber rings
+   COLOUR amber ground in both themes, near-black ink, white cards, one deep orange accent
+   TYPE   Figtree 800 for names, Figtree for text
+   LAYOUT every width: photo on the left, name and bio on its right; links below in two equal columns (one column on phones); one centred 980px column keeps everything symmetric */
+:root{color-scheme:light;--sun1:#ffd36a;--sun2:#f6a23c;--sun3:#e9792b;--bg:#f7a13d;--ink:#1d1206;--soft:#4a3216;--card:#fffaf2;--line:#f0dcc0;--acc:#c2410c}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Figtree,system-ui,-apple-system,Segoe UI,sans-serif;overflow-x:clip}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(5vw,16px);padding-right:max(5vw,16px)}
+.hero{background:radial-gradient(120% 90% at 30% 0%,var(--sun1) 0%,var(--sun2) 45%,var(--bg) 100%);padding-block:clamp(28px,5vw,72px)}
+
+/* identity row: photo left, text right, same on every screen */
+.id{display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-areas:"sun who" "sun about";column-gap:clamp(18px,4vw,48px);align-items:center;max-width:980px;margin-inline:auto}
+.sun{grid-area:sun;position:relative;aspect-ratio:1;width:clamp(124px,26vw,300px)}
+.sun svg{position:absolute;inset:0;width:100%;height:100%}
+.face{position:absolute;inset:22%;border-radius:50%;overflow:hidden;box-shadow:0 0 0 clamp(3px,.6vw,6px) var(--card),0 14px 0 -5px rgba(120,50,0,.25)}
+.face img{width:100%;height:100%;object-fit:cover}
+.ring{transform-origin:220px 220px;animation:spin 60s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.ring{animation:none}}
+.who{grid-area:who;align-self:end}
+.about{grid-area:about;align-self:start}
+h1{font-weight:800;font-size:clamp(30px,5.4vw,56px);line-height:1.05;letter-spacing:-.02em;margin:0 0 6px;text-wrap:balance}
+.handle{font-weight:700;color:var(--soft);margin:0 0 clamp(10px,2vw,18px);font-size:clamp(14px,1.8vw,17px)}
+.bio{font-size:clamp(16px,2vw,19px);margin:0;max-width:40ch}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0;padding:0;list-style:none}
+.tags li{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-weight:700;font-size:15px}
+
+.social{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 0;padding:0;list-style:none}
+.social a{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 16px;border-radius:999px;background:var(--ink);color:var(--card);font-weight:700;font-size:15px;text-decoration:none}
+.social a:hover{background:#000}
+.social a:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.social svg{width:20px;height:20px;flex:none}
+
+/* links: two equal columns, the first one spans the full row so the grid never has an orphan */
+.links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:980px;margin:clamp(26px,4vw,48px) auto 0}
+.lk{display:grid;grid-template-columns:44px minmax(0,1fr) 20px;align-items:center;gap:14px;background:var(--card);border:2px solid var(--ink);border-radius:16px;padding:12px 16px;text-decoration:none;min-height:64px;box-shadow:0 5px 0 var(--ink);transition:transform .12s,box-shadow .12s}
+.lk:hover{transform:translateY(2px);box-shadow:0 3px 0 var(--ink)}
+.lk:active{transform:translateY(5px);box-shadow:0 0 0 var(--ink)}
+.lk:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.lk .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--ink);color:var(--sun1)}
+.lk .ic svg{width:24px;height:24px}
+.lk b{display:block;font-size:17px;line-height:1.2}
+.lk span{display:block;font-size:14px;color:var(--soft)}
+.lk.main{grid-column:1/-1;background:var(--ink);color:var(--card)}
+.lk.main span{color:#f4d9b5}
+.lk.main .ic{background:var(--sun1);color:var(--ink)}
+
+.band{padding-block:clamp(32px,5vw,72px)}
+.paper{background:var(--card)}
+.band .wrap>*{max-width:980px;margin-inline:auto}
+h2{font-weight:800;font-size:clamp(28px,4vw,40px);line-height:1.05;letter-spacing:-.02em;margin-top:0;margin-bottom:8px}
+.lede{color:var(--soft);margin-top:0;margin-bottom:28px;max-width:60ch}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.pc{border:2px solid var(--ink);border-radius:24px;background:#fff;overflow:hidden;display:flex;flex-direction:column}
+.pc:first-child{grid-column:1/-1;flex-direction:row}
+.pc:first-child .shot{flex:0 0 44%}
+.shot{display:grid;place-items:center;background:var(--s);padding:0;overflow:hidden;border-bottom:2px solid var(--ink)}
+.pc:first-child .shot{border-bottom:0;border-right:2px solid var(--ink)}
+.shot img{width:100%;height:auto}
+.pc:not(:first-child) .shot{aspect-ratio:1200/630}
+.shot.phone{display:block;padding:20px 0 0;text-align:center}
+.shot.phone img{display:inline-block;width:min(62%,250px);height:auto;border-radius:20px 20px 0 0;box-shadow:0 0 0 2px var(--ink)}
+.pb{padding:clamp(18px,3vw,28px);display:flex;flex-direction:column;align-items:flex-start}
+.pb h3{font-weight:800;font-size:28px;line-height:1.05;letter-spacing:-.02em;margin:0 0 10px}
+.pb p{margin:0;color:var(--soft)}
+.st{list-style:none;padding:0;margin:0 0 12px;display:flex;flex-wrap:wrap;gap:6px}
+.st li{font-size:13px;font-weight:800;border-radius:999px;padding:3px 10px;border:2px solid var(--ink);white-space:nowrap}
+.st li.on{background:var(--ink);color:var(--sun1)}
+.st li.soon{background:#fff;color:var(--soft);border-style:dashed}
+.feat{list-style:none;margin:14px 0 18px;padding:0;display:grid;gap:6px;color:var(--soft);font-size:15px}
+.feat li{position:relative;padding-left:22px}
+.feat li::before{content:"";position:absolute;left:1px;top:.5em;width:10px;height:5px;border-left:2.5px solid var(--acc);border-bottom:2.5px solid var(--acc);transform:rotate(-45deg)}
+.pb .btn{margin-top:auto}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--card);text-decoration:none;font-weight:800;border-radius:12px;padding:12px 18px;min-height:44px}
+.btn:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.pillars{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.pl{border-radius:20px;padding:20px;border:2px solid var(--ink);background:var(--c);min-height:170px;display:flex;flex-direction:column}
+.pl svg{width:40px;height:40px;margin-bottom:18px}
+.pl b{font-size:22px;font-weight:800;margin-top:0;line-height:1.15}
+.pl span{font-size:15px}
+.note{font-size:14px;color:var(--soft);margin-top:18px}
+footer{background:var(--ink);color:#f4d9b5;padding-block:36px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px 32px;justify-content:space-between;align-items:center;max-width:1120px}
+footer b{color:var(--sun1);font-size:20px}
+footer a{color:var(--card);font-weight:700}
+
+@media(max-width:860px){
+  .grid{grid-template-columns:minmax(0,1fr)}
+  .pc:first-child{flex-direction:column}
+  .pc:first-child .shot{border-right:0;border-bottom:2px solid var(--ink)}
+  .pillars{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:640px){
+  .links{grid-template-columns:minmax(0,1fr)}
+  .id{grid-template-areas:"sun who" "about about";row-gap:18px;align-items:center}
+  .who{align-self:center}
+  .tags{margin-top:14px}
+}
+@media(max-width:420px){.pl{min-height:140px;padding:16px}.pl b{font-size:19px}.tags li{font-size:14px;padding:5px 12px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="id">
+      <div class="sun" aria-hidden="true">
+        <svg viewBox="0 0 440 440">
+          <circle cx="220" cy="220" r="218" fill="#ffd36a" opacity=".55"/>
+          <circle cx="220" cy="220" r="180" fill="#ffc04d" opacity=".7"/>
+          <circle cx="220" cy="220" r="146" fill="#f6a23c"/>
+          <g class="ring" fill="#1d1206">
+            <g id="ray"><rect x="216" y="6" width="8" height="26" rx="4"/></g>
+          </g>
+        </svg>
+        <div class="face"><img src="foto.jpg" alt="Furkan Aslan"></div>
+      </div>
+      <div class="who">
+        <h1>Furkan Aslan</h1>
+        <p class="handle">@furkanaslan.co · Girişimci</p>
+      </div>
+      <div class="about">
+        <p class="bio">Hayatı kolaylaştıran dijital ürünler geliştiriyorum. Girişimcilik yolculuğumu, öğrendiklerimi ve hatalarımı burada paylaşıyorum.</p>
+        <ul class="tags"><li>Girişim</li><li>Teknoloji</li><li>Gezi</li><li>Hayat</li></ul>
+        <ul class="social" aria-label="Sosyal medya">
+          <li><a href="https://www.instagram.com/furkanaslan.co/" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>Instagram</a></li>
+          <li><a href="https://www.linkedin.com/in/furkanaslan6565/" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-1.9 3.7-1.9 4 0 4.7 2.6 4.7 6V21h-4v-5c0-1.2 0-2.7-1.7-2.7s-1.9 1.3-1.9 2.6V21h-4z"/></svg>LinkedIn</a></li>
+          <li><a href="https://x.com/glorius_97" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 3h3.1l-6.8 7.7L21.8 21h-6.2l-4.9-6.3L5.1 21H2l7.3-8.3L2.2 3h6.4l4.4 5.8zm-1.1 16.2h1.7L7.7 4.7H5.9z"/></svg>X</a></li>
+        </ul>
+      </div>
+    </div>
+    <nav class="links" aria-label="Bağlantılar">
+      <a class="lk main" href="https://kalipla.com">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 18h4"/></svg></span>
+        <span><b>Kalıpla</b><span>1.011 İngilizce kalıbı oyun gibi öğren</span></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
+      </a>
+      <a class="lk" href="https://yedese.com">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h11a4 4 0 0 1 4 4v10H8a4 4 0 0 1-4-4z"/><path d="M8 10h7M8 14h5"/></svg></span>
+        <span><b>yedese</b><span>Günde 10 dakikada YDS kelimeleri</span></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
+      </a>
+      <a class="lk" href="https://foliody.com">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3h11l3 3v15H5z"/><path d="M8 13l3 3 5-6"/></svg></span>
+        <span><b>Foliody</b><span>Gününü İngilizce yaz, yapay zeka düzeltsin</span></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
+      </a>
+      <a class="lk" href="https://englishreadingroom.com">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 6c-3-2-6-2-9-1v14c3-1 6-1 9 1 3-2 6-2 9-1V5c-3-1-6-1-9 1z"/><path d="M12 6v14"/></svg></span>
+        <span><b>English Reading Room</b><span>A1'den C2'ye okuyarak İngilizce</span></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
+      </a>
+      <a class="lk" href="https://corpsloop.com">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="12" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M8.6 10.6l6.8-3.2M8.6 13.4l6.8 3.2"/></svg></span>
+        <span><b>CorpsLoop</b><span>Avrupa'daki STK'lar için ortaklık ağı</span></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
+      </a>
+      <a class="lk" href="https://www.youtube.com/@kendimizeegeziyoruz">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3z" fill="currentColor"/></svg></span>
+        <span><b>Kendimize Geziyoruz</b><span>YouTube'daki gezi kanalımız</span></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
+      </a>
+      <a class="lk" href="https://ig.me/m/furkanaslan.co">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v11H9l-5 4z"/></svg></span>
+        <span><b>İletişim</b><span>İş birliği ve sorular için Instagram mesajı</span></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="band paper" id="projeler">
+    <div class="wrap">
+      <h2>Ürünler</h2>
+      <p class="lede">Eğitimden sivil topluma uzanan beş dijital ürün, hepsi sıfırdan. Geliştirme sürecini Instagram'da paylaşıyorum.</p>
+      <div class="grid">
+        <article class="pc">
+          <a class="shot" href="https://kalipla.com" style="--s:#0d0b1f"><img src="kalipla.png" alt="Kalıpla: İngilizceyi kalıplarla konuş" loading="lazy" width="1200" height="630"></a>
+          <div class="pb">
+            <h3>Kalıpla</h3>
+            <ul class="st"><li class="on">Web</li><li class="on">Google Play</li><li class="soon">App Store · yakında</li></ul>
+            <p>İngilizceyi kelime ezberleyerek değil, anadili İngilizce olanların her gün kullandığı kalıplarla öğreten uygulama.</p>
+            <ul class="feat"><li>1.011 gerçek kalıp, oyun gibi alıştırmalar</li><li>Günlük seri ve akıllı tekrar</li><li>Sesli örnekler, ilk 50 kalıp ücretsiz</li></ul>
+            <a class="btn" href="https://kalipla.com">kalipla.com <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+        <article class="pc">
+          <a class="shot phone" href="https://yedese.com" style="--s:#f4f3ee"><img src="yedese.jpg" alt="yedese uygulamasının bugünkü plan ekranı" loading="lazy" width="693" height="1500"></a>
+          <div class="pb">
+            <h3>yedese</h3>
+            <ul class="st"><li class="on">Web</li><li class="on">Google Play</li><li class="soon">App Store · yakında</li></ul>
+            <p>YDS ve e-YDS'ye hazırlananlar için günde 10 dakikalık kelime planı. Her gün biraz, sınavda çok.</p>
+            <ul class="feat"><li>1.610 YDS kelimesi, her biri doğal sesle</li><li>1-3-7-30-120 gün aralıklı tekrar</li><li>Her gün 5 YDS tarzı soru</li></ul>
+            <a class="btn" href="https://yedese.com">yedese.com <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+        <article class="pc">
+          <a class="shot" href="https://foliody.com" style="--s:#f6efe2"><img src="foliody.png" alt="Foliody: Gününü İngilizce yaz, kendi hatalarından öğren" loading="lazy" width="1200" height="630"></a>
+          <div class="pb">
+            <h3>Foliody</h3>
+            <ul class="st"><li class="on">Web</li><li class="soon">Google Play · yakında</li><li class="soon">App Store · yakında</li></ul>
+            <p>Gününü İngilizce yaz, yapay zeka Türkçe açıklamalarla düzeltsin. Kendi hatalarından öğren.</p>
+            <ul class="feat"><li>Satır içi düzeltme ve daha doğal öneriler</li><li>Hatalarından otomatik tekrar kartları</li><li>A2-B2 seviyeleri, günlüklerin sana özel</li></ul>
+            <a class="btn" href="https://foliody.com">foliody.com <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+        <article class="pc">
+          <a class="shot" href="https://englishreadingroom.com" style="--s:#2a1a6e"><img src="err.jpg" alt="English Reading Room" loading="lazy" width="1200" height="630"></a>
+          <div class="pb">
+            <h3>English Reading Room</h3>
+            <ul class="st"><li class="on">Web</li></ul>
+            <p>Okuyarak İngilizce öğrenme sitesi. Hikâyeyi dinle, bilmediğin kelimeye dokun, anlamını gör.</p>
+            <ul class="feat"><li>A1'den C2'ye özgün hikâyeler</li><li>Bilim, sağlık ve sosyal bilimlerde ileri okumalar</li><li>Her cümle sesli, tek dokunuşla çeviri</li></ul>
+            <a class="btn" href="https://englishreadingroom.com">englishreadingroom.com <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+        <article class="pc">
+          <a class="shot" href="https://corpsloop.com" style="--s:#eef2fb"><img src="corps.jpg" alt="CorpsLoop ana sayfası" loading="lazy" width="800" height="420"></a>
+          <div class="pb">
+            <h3>CorpsLoop</h3>
+            <ul class="st"><li class="on">Web</li><li class="soon">Google Play · yakında</li><li class="soon">App Store · yakında</li></ul>
+            <p>Avrupa'daki dernek ve STK'lar için ortaklık ağı. Erasmus+ ve ESC projelerine ortak bul, doğrula, bağlan.</p>
+            <ul class="feat"><li>Aktif ve yanıt veren ortakları bul</li><li>Doğrulanmış kurum profilleri</li><li>8 dilde, mesajlaşma ve ilanlar</li></ul>
+            <a class="btn" href="https://corpsloop.com">corpsloop.com <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+      </div>
+      <p class="note">Görseller ürünlerin kendi sitelerinden alınmıştır.</p>
+    </div>
+  </section>
+
+  <section class="band" id="neler">
+    <div class="wrap">
+      <h2>Paylaşımlarım</h2>
+      <p class="lede" style="color:var(--ink)">Teknik derinlik ve yolda geçen hayat. Girişimcilik bu ikisinin kesiştiği yerde.</p>
+      <div class="pillars">
+        <div class="pl" style="--c:#fff1d6"><svg viewBox="0 0 40 40" fill="none" stroke="#1d1206" stroke-width="3"><path d="M20 4c7 5 10 13 8 22l-8 6-8-6c-2-9 1-17 8-22z"/><circle cx="20" cy="16" r="3"/><path d="M12 26l-5 6 7-1M28 26l5 6-7-1"/></svg><b>Girişim</b><span>Şirket kurma, büyüme, finans ve karar verme</span></div>
+        <div class="pl" style="--c:#ffe0a8"><svg viewBox="0 0 40 40" fill="none" stroke="#1d1206" stroke-width="3"><rect x="5" y="8" width="30" height="20" rx="3"/><path d="M14 34h12M20 28v6M13 15l-3 3 3 3M27 15l3 3-3 3"/></svg><b>Teknoloji</b><span>Ürün geliştirme, bulut ve yapay zekâ</span></div>
+        <div class="pl" style="--c:#ffc77a"><svg viewBox="0 0 40 40" fill="none" stroke="#1d1206" stroke-width="3"><circle cx="20" cy="20" r="15"/><path d="M5 20h30M20 5c5 5 5 25 0 30M20 5c-5 5-5 25 0 30"/></svg><b>Gezi</b><span>Farklı ülkeler, farklı insanlar, yoldan çalışmak</span></div>
+        <div class="pl" style="--c:#fbab5a"><svg viewBox="0 0 40 40" fill="none" stroke="#1d1206" stroke-width="3"><path d="M9 16h20v10a8 8 0 0 1-8 8h-4a8 8 0 0 1-8-8z"/><path d="M29 19h3a4 4 0 0 1 0 8h-3M15 6c0 3 3 3 3 6M21 6c0 3 3 3 3 6"/></svg><b>Hayat</b><span>Hatalar, dersler ve gerçek hayattan notlar</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <b>Furkan Aslan</b>
+    <span>Instagram: <a href="https://www.instagram.com/furkanaslan.co/">@furkanaslan.co</a></span>
+    <span>© 2026 furkanaslan.co</span>
+  </div>
+</footer>
+<script>
+{
+  const g=document.querySelector('.ring');
+  const ray=document.getElementById('ray');
+  if(g&&ray){for(let i=1;i<24;i++){const u=ray.cloneNode(true);u.removeAttribute('id');u.setAttribute('transform',`rotate(${i*15} 220 220)`);u.firstElementChild.setAttribute('opacity',i%2?'.35':'.8');g.appendChild(u)}}
+}
+</script>
+</body>
+</html>
